@@ -1,0 +1,41 @@
+.RoundedButton{
+    /* Ellipse 34 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 40px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+background: #FEEFEC;
+border: 1.5px solid #252525;
+/* 1 */
+
+box-shadow: 2px 2px 0px #D35400;
+border-radius: 50%;
+}
+
+.RoundedButtonPlay{
+    /* Ellipse 34 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 40px;
+height: 40px;
+left: 0px;
+top: 0px;
+
+background: #F39C12;
+border: 1.5px solid #252525;
+/* 1 */
+
+box-shadow: 2px 2px 0px #D35400;
+border-radius: 50%;
+font-size: large;
+
+}

@@ -1,8 +1,8 @@
-import SquareButton from "../../common"
+import RoundedButton from "../../common/RoundedButton"
+
 function Test(){
     return <>
-   <SquareButton></SquareButton>
-    </>
+<RoundedButton></RoundedButton>   </>
 }
 
 
