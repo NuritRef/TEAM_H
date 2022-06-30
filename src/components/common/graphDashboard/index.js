@@ -4,7 +4,7 @@ import Graph from "./Graph";
 import "./Style.css";
 import Tab from "./Tab";
 
-export default function GraphContainer() {
+export default function GraphDashboard() {
   const [dataSrc, setDataSrc] = useState(fakeData.dataSrcInit);
   const [selectedTab, setSelectedTab] = useState("Assessments");
   const tabs = [
