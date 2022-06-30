@@ -34,7 +34,7 @@ import CalibrateCam from "../../../pages/TrainFocus/CalibrateCam";
 import Results from "../../../pages/TrainFocus/TrainFocusResults";
 import StartFocus from "../../../pages/TrainFocus/StartFocus/StartFocus";
 import Instructions from "../../../pages/FreeStyle/Instructions";
-import GraphDashBoard from "../../common/graphDashboard"
+import GraphDashBoard from "../../common/GraphDashboard"
 //  import Popup from "./popup/Popup";
 // import { Outlet, Route, Routes } from "react-router-dom";
 // import TextArea from "../common/TextArea/Index";
@@ -108,7 +108,7 @@ function Main() {
           <Route index element={<TeamH />} />
         <Route path="/teamH/training" element={<Training />} />
         <Route path="/teamH/instructions" element={<Instructions />} />
-        <Route path="/teamH/dashBoard" element={<GraphDashBoard />} />
+        <Route path="/teamH/graphDashBoard" element={<GraphDashBoard />} />
         <Route path="components-path" element={<>team's components</>} />
         </Route>
 

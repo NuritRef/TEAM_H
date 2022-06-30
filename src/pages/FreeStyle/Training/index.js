@@ -12,10 +12,10 @@ function Training() {
   const tr = localDataContext.userDetails.TR
   console.log('userLpm',tr[tr.length-1]);
   
-  const [lpm,setLpm] = useState(tr[tr.length-1].Value) // we have to pull it from the server!!!!!!!!
-  let fileName = pickFile(lpm); // return a Number - indicates which file to require 
+  const [lpm,setLpm] = useState(tr[tr.length-1].Value) 
+  let fileName = pickFile(lpm); 
   const file = require(`../../../assets/wush_mp3/wush_${fileName}_1min.mp3`);
-  const [audio, setAudio] = useState(new Audio(file));  //rewrite??
+  const [audio, setAudio] = useState(new Audio(file)); 
   const [playing, setPlaying] = useState(0)
   
   function pickFile(lpm) {
@@ -36,7 +36,6 @@ function Training() {
 function onPlay(){
   audio.play();
   audio.playbackRate = lpm/fileName
-  console.log(audio.playbackRate);
   setPlaying(1)
 
 }
@@ -48,7 +47,10 @@ setPlaying(0)
 
 function rapid(newLpm){
   setLpm(newLpm);
-  console.log("rapid")
+  console.log(file)
+  console.log(lpm);
+  audio.playbackRate = lpm/fileName
+
 }
 
 function onComplete(){
