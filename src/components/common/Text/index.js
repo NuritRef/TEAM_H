@@ -3,14 +3,14 @@ import styles from "./style.module.css";
 // Creator : Team B - Ayellet & Hodaya
 function Text(props) {
   return (
-    <>
-      <div className={styles.title} id="title">
+    <div className="wholeText">
+      <div className={styles.title}>
         {props.title}
       </div>
-      <div className={styles.text} id="text">
+      <div className={styles.text}>
         {props.text}
       </div>
-    </>
+    </div>
   );
 }
 

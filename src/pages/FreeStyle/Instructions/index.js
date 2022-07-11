@@ -9,10 +9,11 @@ let text = "It is a long established fact that a reader will be distracted by th
 
 // Creator : Team h
 function Instructions() {
-    return <>
-        <div><Text text={text} title={"instructions"}></Text></div>
-        <div><SubmitBtn type={"link"} path= {"/teamH/training"} name={"Training"}></SubmitBtn></div>
-    </>
+    return <div className={styles.instPage}>
+        <div className={styles.instruction}>Instructions</div>
+        <div className={styles.text}>{text}</div>
+        <div className={styles.goToTrain}><SubmitBtn type={"link"} path= {"/teamH/training"} name={"Next"}></SubmitBtn></div>
+    </div>
 }
 
 export default Instructions

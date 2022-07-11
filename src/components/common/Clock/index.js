@@ -96,6 +96,7 @@ function Clock(props) {
           trailColor={"#FEEFEC"}
           strokeLinecap={"square"}
           size={200}
+          strokeWidth={15}
         >
           {renderTime}
         </CountdownCircleTimer>
@@ -104,7 +105,7 @@ function Clock(props) {
         <button
           className={styles.plusMinus}
           onClick={() => {
-            rapidValue > 0 && setRapidValue(rapidValue + 1);
+            rapidValue > 0&rapidValue<100 && setRapidValue(rapidValue + 1);
             props.funcs.rapid(rapidValue);
           }}
         >

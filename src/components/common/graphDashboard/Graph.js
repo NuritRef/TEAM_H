@@ -1,62 +1,84 @@
-import React from 'react';
-import './Style.css';
-
+import React from "react";
+import "./Style.css";
 
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
+  Filler,
   PointElement,
   LineElement,
   Title,
   Tooltip,
   Legend,
   DatasetController,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
+} from "chart.js";
+import { Line } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
+  Filler,
   LineElement,
   Title,
   Tooltip,
   Legend
 );
-export default function Graph(props){
-    const dataArr = props.d.data;
-    const options = {
-      responsive: true,
-      
-      plugins: {
-        
-        legend: {
-          position: 'top',
+export default function Graph(props) {
+  const dataArr = props.data;
+  const options = {
+    scales: {
+      x: {
+        // <-- axis is not array anymore, unlike before in v2.x: '[{'
+        grid: {
+          borderColor: "rgba(243, 156, 18, 1)", // <-- this line is answer to initial question
           display: false,
-        }
+        },
       },
-    };
+      y: {
+        // <-- axis is not array anymore, unlike before in v2.x: '[{'
+        grid: {
+          // color: "rgba(0,255,0,0.1)",
+          borderColor: "rgba(243, 156, 18, 1)", // <-- this line is answer to initial question
+          display: false,
+        },
+      },
+    },
+    responsive: true,
 
-    
+    plugins: {
+      
+      
+      legend: {
+        position: "top",
+        display: false,
+      },
+    },
+  };
 
-    const labels = props.labs
-    const data = {
-      labels,
-      datasets: [
+  const labels = props.labs
+  const data = {
+    labels,
+    datasets: [
 
-        {
-          data: dataArr,
-          borderColor: '#7D56A5',
-          backgroundColor: 'yellow'
-        }
+      {
+        data: dataArr,
+        fill: {
+        target: 'origin',
+        above: 'rgb(243, 156, 18, 1)',   // Area will be red above the origin 
+        } ,
           
-        ],
-    };
-    console.log('labels' + labels);
-    console.log('data' + dataArr);
-      return <Line options={options} data={data} />;
+        borderColor: '#7D56A5',
+        backgroundColor: 'yellow',
+        showLine:false  
+      }
+        
+      ],
+  };
+  console.log('labels' + labels);
+  console.log('data' + dataArr);
+  return <Line options={options} data={data} />;
 
 
 }
-
